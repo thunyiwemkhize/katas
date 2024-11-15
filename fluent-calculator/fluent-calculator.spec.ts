@@ -195,8 +195,36 @@ describe('FluentCalculator', ()=>{
                 .result();
     
             // Assert
-    
             expect(actual).toBe(46);
+        });
+    });
+
+    describe('WithoutSeeding', () =>{
+        it('should return the sum of -2 when subtracting 2 without seeding', () =>{
+            // Arrange
+            const sut = new Calculator();
+            
+            // Act
+            const actual = sut
+                .minus(2)
+                .result();
+    
+            // Assert
+            expect(actual).toBe(-2);
+        });
+
+        it('should return the sum of -234 when subtracting  without seeding', () =>{
+            // Arrange
+            const sut = new Calculator();
+            
+            // Act
+            const actual = sut
+                .minus(-2)
+                .minus(-2)
+                .result();
+    
+            // Assert
+            expect(actual).toBe(4);
         });
     });
 });
